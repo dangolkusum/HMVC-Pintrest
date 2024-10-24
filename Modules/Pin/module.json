@@ -1,0 +1,11 @@
+{
+    "name": "Pin",
+    "alias": "pin",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Pin\\app\\Providers\\PinServiceProvider"
+    ],
+    "files": []
+}
