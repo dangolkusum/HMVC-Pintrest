@@ -14,6 +14,12 @@ use Modules\Pin\app\Http\Controllers\PinController;
 |
 */
 
-Route::group([], function () {
-    Route::resource('pin', PinController::class)->names('pin');
+Route::group(['prefix' => 'pins', 'middleware' => 'web'], function () {
+    Route::get('/', [PinController::class, 'index'])->name('pins.index');
+    Route::post('/delete/{id}', [PinController::class, 'destroy']);
+    Route::get('/create', [PinController::class, 'create'])->name('pins.create');
+    Route::post('/', [PinController::class, 'store'])->name('pins.store');
+    Route::get('/{id}/show', [PinController::class, 'show'])->name('');
+    Route::get('/{id}/edit', [PinController::class, 'create'])->name('');
+    Route::put('/{id}', [PinController::class, 'update'])->name('');
 });
